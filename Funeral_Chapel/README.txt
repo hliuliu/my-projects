@@ -10,7 +10,7 @@ Make sure you have Python 2.7 installed. If not, You can install it through this
 Click on "Download Python 2.7.10" and follow the instructions.
 
 After downloading Python, open up the command prompt (Windows) or Terminal (Linux/UNIX).
-Type "python". You should the Python interprter display.
+Type "python". You should see the Python interprter display.
 
 If instead, you see the following message: "'python' is not recognized as an internal or external command, operable program or batch file." on Windows,
 this means that there are 2 possibilities:
@@ -38,4 +38,4 @@ Following the instructions carefully.
 To select the default option, simply type nothing and press enter.
 when the program prompts for a .csv filename, If the input corresponds to an existing file, It will ask whether or not you want to overwrite it.
 
-Thanks You for using this software. I will provide more documentation if needed.
+Thank You for using this software. I will provide more documentation if needed.
