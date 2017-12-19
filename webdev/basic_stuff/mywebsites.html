@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Tutor Dude</title>
+  <link rel='stylesheet' href='style.css'>
+  <script>
+	function concat_str(arg) {
+		var exp=document.getElementById('calc');
+		exp.value+=arg;
+	}
+	function empty() {
+		var exp=document.getElementById('calc');
+		exp.value='';
+	}
+	function evaluateExp() {
+		var exp=document.getElementById('calc');
+		exp.value=eval(exp.value);
+	}
+	function wrapMethod(start,end) {
+		var exp=document.getElementById('calc');
+		var asc;
+		for(i=exp.value.length-1;i>=0;i--) {
+			asc=exp.value.charAt(i);
+			if(asc='.') continue
+			asc=asc.charCodeAt(0);
+			var offset='0'.charCodeAt(0);
+			if(asc-offset<0 || asc-offset>9) {
+				var a=exp.value.substring(0,i+1);
+				var b=exp.value.substring(i+1,exp.value.length);
+				exp.value=a+start+b+end;
+				return;
+			}
+		}
+		exp.value=start+exp.value+end
+	}
+  </script>
+</head>
+<body style='background-color:sienna;'>
+  <div id="centered">
+	  <header>
+	  <h1 class='header'>Tutor Dude</h1>
+	  </header>
+	  <nav>
+		<ul>
+			<li>Home</li>
+			<li>Contact</li>
+		</ul>
+	  </nav>
+	  <section>
+		  <h2>Math/Computer Science tutor</h2>
+		  <p>My prargragh goes here</p><br>
+		  Here are links to some websites:<br>
+		  <a href="http://www.google.com" target='_blank'>Google</a><br>
+		  <a href="http://www.uvic.ca" target='_blank'>UVic</a><br>
+		  <a href="http://www.facebook.com" target='_blank'>Facebook</a><br>
+		  <a href="http://www.hotmail.com" target='_blank'>Hotmail</a><br>
+		  <a href="http://www.youtube.com" width='300' target='_blank'> <img src="youtube.jpg" width='100' height="50"></a><br>
+		  <a href="http://www.odb.org" target='_blank'>Our Daily Bread</a><br>
+		  <a href="http://www.praise1065.com" target='_blank'>Priase 1065</a><br>
+		  <a href="http://connex.csc.uvic.ca" target='_blank'>Connex</a><br>
+		  <a href="http://www.tutorialspoint.com" target='_blank'>Tutorials Point</a><br>
+		  <a href="http://www.talentbuddy.co" target='_blank'>Talentbuddy</a><br>
+		  <a href="http://www.hsbc.ca" target='_blank'>HSBC</a><br>
+		  <a href="http://www.w3schools.com" target='_blank'>W3Schools</a><br>
+	  </section>
+	  <aside>
+		<h2>Extra Gadgets<h2><br>
+		<h3>Calculator</h3>
+		<input type='text' id='calc' value=''><br><br>
+		<input type='button' value='1' onclick='concat_str("1");'>
+		<input type='button' value='2' onclick='concat_str("2");'>
+		<input type='button' value='3' onclick='concat_str("3");'>
+		<input type='button' value='+' style="width:16px;" onclick='concat_str("+");'>
+		<br><input type='button' value='4' onclick='concat_str("4");'>
+		<input type='button' value='5' onclick='concat_str("5");'>
+		<input type='button' value='6' onclick='concat_str("6");'>
+		<input type='button' value='-' onclick='concat_str("-");'>
+		<br><input type='button' value='7' onclick='concat_str("7");'>
+		<input type='button' value='8' onclick='concat_str("8");'>
+		<input type='button' value='9' onclick='concat_str("9");'>
+		<input type='button' value='*' onclick='concat_str("*");'>
+		<br><input type='button' value='c' onclick='empty()'>
+		<input type='button' value='0' onclick='concat_str("0");'>
+		<input type='button' value='&radic;' onclick='wrapMethod("Math.sqrt(",")");'>
+		<input type='button' value='/' onclick='concat_str("/");'><br>
+		<input type='button' value='(' onclick='concat_str("(");'>
+		<input type='button' value=')' onclick='concat_str(")");'>
+		<input type='button' value='Enter' onclick='evaluateExp();'>
+		<input type='button' value='.' onclick='concat_str(".");'>
+		<input type='button' value='^' onclick='wrapMethod("Math.pow(",",");'>
+		<input type='button' value='&pi;' onclick='concat_str(eval("Math.PI"));'>
+		<p></p>
+		<h3>Clock</h3>
+		<span id='clock'></span>
+		<script>
+		function updateTime() {
+			var now=new Date();
+			var h=now.getHours();
+			var m=now.getMinutes();
+			var s=now.getSeconds();
+			if(h<10) h='0'+h;
+			if(m<10) m='0'+m;
+			if(s<10) s='0'+s;
+			document.getElementById('clock').innerHTML=h+':'+m+':'+s;
+		}
+		var t=setInterval('updateTime()',500);
+		</script>
+	  </aside>
+	  <footer>
+		&copy; Copyright macsctutor.com 2014
+	  </footer>
+	  <script>
+
+	  </script>
+  </div>
+</body>
+</html>

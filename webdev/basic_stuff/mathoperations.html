@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Math Operations</title>
+  <script>
+  function factorial() {
+	var fact=document.getElementById('fact').value;
+	var res=document.getElementById('result');
+	if(fact=='') {
+		res.value='';
+		return;
+	}
+	fact=parseInt(fact);
+	res.value=fact<0?'Invalid Input':factorialRet(fact);
+  }
+  function factorialRet(n) {
+	if(n<0) return 0;
+	var ans=1;
+	for(i=2;i<=n;i++) ans*=i;
+	return ans;
+  }
+  function computegcdret(a,b) {
+	a=Math.abs(a);
+	b=Math.abs(b);
+	if(a<b) return computegcdret(b,a);
+	var r;
+	while(b!=0) {
+		r=a%b;
+		a=b;
+		b=r;
+	}
+	return a;
+  }
+  function gcd() {
+	var a=document.getElementById('gl1').value;
+	var b=document.getElementById('gl2').value;
+	var res=document.getElementById('result');
+	if(a=='' || b=='') {
+		res.value='';
+		return;
+	}
+	a=parseInt(a);
+	b=parseInt(b);
+	res.value=computegcdret(a,b);
+  }
+  function lcm() {
+ 	var a=document.getElementById('gl1').value;
+	var b=document.getElementById('gl2').value;
+	var res=document.getElementById('result');
+	if(a=='' || b=='') {
+		res.value='';
+		return;
+	}
+	a=parseInt(a);
+	b=parseInt(b);
+	res.value=Math.abs(a*b/computegcdret(a,b));
+  }
+  function radtodeg() {
+	var rad=document.getElementById('angle').value;
+	var res=document.getElementById('result');
+	if(rad=='') {
+		res.value='';
+		return;
+	}
+	rad=parseFloat(rad);
+	res.value=rad*180/Math.PI;
+  }
+  function degtorad() {
+	var deg=document.getElementById('angle').value;
+	var res=document.getElementById('result');
+	if(deg=='') {
+		res.value='';
+		return;
+	}
+	deg=parseFloat(deg);
+	res.value=deg/180*Math.PI;
+  }
+  </script>
+</head>
+<body>
+  <h1>Math Operations</h1>
+  <h2>Factorial</h2>
+  <input type='text' id='fact' style="width:50px;">
+  <input type='submit' value='Compute' onclick='factorial();'><br>
+  <h2>GCD/LCM</h2>
+  <input type='text' id='gl1' style="width:50px;">
+  <input type='text' id='gl2' style="width:50px;">
+  <input type='submit' value='Compute gcd' onclick='gcd();'>
+  <input type='submit' value='Compute lcm' onclick='lcm();'><br>
+  <h2>Angles</h2>
+  <input type='text' id='angle' style="width:50px;">
+  <input type='submit' value='Radian to Degree' onclick='radtodeg();'>
+  <input type='submit' value='Degree to Radian' onclick='degtorad();'>
+  <p></p><label for='result'>Result:</label><input type='text' id='result'>
+</body>
+</html>

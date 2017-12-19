@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Select Box Filter Example</title>
+  <script src="http://ajax.googleapis.com/ajax/libs/mootools/1.2.6/mootools.js"></script>
+  <script src='http://www.cbolson.com/sandbox/mootools/multipleSelectFilter/js/multipleSelectFilter.js'></script>
+  <script type="text/javascript">
+    window.addEvent('domready', function() {
+    $$('select[multiple]').each(function(el,index){
+    new multipleSelectFilter(el,{
+    'initLength':'140',
+    'initialTxt':'search options...',
+    'charWidth':'8'
+    });
+    });
+    });
+  </script>
+</head>
+<body>
+	<select multiple>
+    <optgroup>
+  		<option value='1'>Number 1</option>
+  		<option value='2'>Number 2</option>
+  		<option value='3'>Number 3</option>
+    </optgroup>
+	</select>
+</body>
+</html>

@@ -1,0 +1,15 @@
+* {margin:0px;padding:0px;}
+body {text-align:center;}
+#centered {width:960px; margin:0px auto; text-align:left;}
+h1.header {color:cyan; text-align:center; background-color:yellow;}
+a {margin:0px 50px; text-decoration:none; }
+a:hover {color:red;}
+a:active {color:yellow;}
+a:visited {color:green;}
+nav {margin:5px; border:1px solid purple;}
+nav ul{list-style-type:none;}
+nav ul li{display:inline; padding:10px;}
+section {float:left; margin:10px; padding:5px; border:2px solid teal; width:606px}
+aside {float:left; padding:5px; margin:10px 0px; border:2px solid orange; width:296px;}
+footer {clear:both; text-align:center; border:2px solid blue; padding: 5px;}
+.youtubebg {background-image:url("youtube.jpg"); background-repeat:no-repeat; height:100px; width:200px;}

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Addition</title>
+  <script type="text/javascript">
+    function add() {
+      var val1=document.getElementById('summand1').value;
+      var val2=document.getElementById('summand2').value;
+      if(val1.length==0 || val2.length==0) {
+        alert('Please enter a real value in the text box!');
+        return;
+      }
+      val1=parseFloat(val1);
+      val2=parseFloat(val2);
+      var mySum=document.getElementById('sum');
+      mySum.innerHTML=val1+val2;
+    }
+  </script>
+</head>
+<body>
+  <h1 id="title">Addition</h1>
+  <input type="text" id="summand1" />
+  <input type="text" id="summand2" />
+  <input type="submit" value="Result" onclick="add()">
+  <h1 id="sum"></h1>
+</body>
+</html>

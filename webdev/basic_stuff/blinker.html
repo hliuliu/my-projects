@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Blink Hello World</title>
+  <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.11.0.min.js"></script>
+  <script>
+  	  var t;
+      var s=500;
+      function setSpeed() {
+    	 s=document.getElementById('speed').value;
+    	 s=parseInt(s);
+    	 clearInterval(t);
+    	 if(s>0) {
+    	 t=setInterval(function() {
+		 	$('#wow').toggle();
+	     },s);
+	     }
+  	  }
+  $(function() {
+	  t=setInterval(function() {
+		$('#wow').toggle();
+	  },s);
+  });
+  </script>
+</head>
+<body style='width:600px; color:blue;'>
+<div id='wow'>Hello World</div>
+<div style='margin:20px;position:absolute;left:30px;top:10px;'>
+<label for='speed'>Adjust Speed in milliseconds</label>
+<input type='text' id='speed'>
+<input type='submit' value='OK' onclick='setSpeed();' autofocus="true"><br>
+Have Fun!
+
+</div>
+</body>
+</html>

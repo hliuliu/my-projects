@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Stopwatch</title>
+  <script>
+  	var i=0;
+  	var timer;
+  	var active=False;
+  	function update() {
+  		i++;
+  		var cur=document.getElementById('sec');
+  		cur.innerHTML=""+i;
+  	}
+  	function stop() {
+		clearInterval(timer);
+		var cur=document.getElementById('status');
+		cur.value=i>0?"Resume":"Start";
+		active=false;
+  	}
+
+  	function clearAll() {
+		i=-1;
+		update();
+		stop();
+  	}
+  	function start() {
+  		if(active) {
+  			stop();
+  			return;
+  		}
+  		var cur=document.getElementById('status');
+  		cur.value='Stop';
+  		timer=setInterval("update()",1000);
+  		active=true;
+  	}
+
+  </script>
+</head>
+<body>
+  <h1>Stopwatch</h1>
+  <h2>Time(seconds): <font id='sec'>0</font></h2>
+  <input type='submit' value='Start' onclick='start();' id='status'>
+  <!--input type='submit' value='Stop' onclick='stop();'-->
+  <input type='submit' value='Reset' onclick='clearAll();'>
+</body>
+</html>

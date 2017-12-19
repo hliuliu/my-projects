@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Ex 1-1</title>
+  <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+  <script type="text/javascipt">
+    window.onload=function() {
+      alert('might not work!');
+      var keywordList = prompt("Enter keywords,separated by commas");
+      var arrayList=keywordList.split(",");
+      var resultString="wow!";
+      for(var i=0;i<arrayList.length;i++) {
+        resultString+="Keyword: "+arrayList[i]+"<br />";
+      }
+      var blk=document.getElementById("result");
+      blk.innerHTML=resultString;
+    }
+  </script>
+</head>
+<body>
+  <div id="result">
+  </div>
+</body>
+</html>
